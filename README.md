@@ -1,3 +1,9 @@
+# Authldap
+
+Testé avec Travis CI
+
+[![Build Status](https://travis-ci.org/sipf-infrastructure/apt-cacher-ng.png?branch=master)](https://travis-ci.org/sipf-infrastructure/apt-cacher-ng)
+
 # Installation du module
 
 ```
