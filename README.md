@@ -1,22 +1,13 @@
-# Apt-cacher-ng [![Build Status](https://travis-ci.org/sipf-infrastructure/apt-cacher-ng.png?branch=master)](https://travis-ci.org/sipf-infrastructure/apt-cacher-ng)
+## Utilisation du module
 
-## Installation du module
-```bash
-$ mkdir apt-cacher-ng
-$ cd apt-cacher-ng
-$ git clone https://github.com/sipf-infrastructure/apt-cacher-ng.git
+* Ce module utilise les "hiera", veuillez créer un répertoire "apt-cacher-ng" dans le dossier hieradata.
+* Dans ce nouveau répertoire veuillez créer un fichier portant le nom suivant : srv1.dev.yaml
+* Ce fichier doit contenir ce qui suit :
+
+```
+---
+apt-cacher-ng::account: admin
+apt-cacher-ng::password: password
 ```
 
-## Utilisation
-
-Dans le fichier '/etc/puppet/manifests/site.pp', on définit ce qui suit :
-```ruby
-node test {
-        class { 'apt-cacher-ng':
-                account		=> admin,
-                password	=> password,
-        }
-}
-```
-Lors du démarrage de ce logiciel, une interface d'administration est accessible (sur le port 3142 par défaut). Le paramètre **account** et **password** permet de sécuriser un minimum l'accès à cette interface.
-
+Veuillez évidement changer le login ou le mot de passe suivant vos propres spécifications.

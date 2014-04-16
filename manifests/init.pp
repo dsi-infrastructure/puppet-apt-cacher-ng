@@ -1,7 +1,10 @@
 # class apt-cacher-ng
 #
 
-class apt-cacher-ng($account,$password) {
+class apt-cacher-ng(
+  $account = hiera(apt-cacher-ng::account),
+  $password = hiera(apt-cacher-ng::password)) {
+
   package { 'apt-cacher-ng':
     ensure => installed,
   }
